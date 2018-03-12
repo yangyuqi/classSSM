@@ -8,14 +8,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Insert title here</title>
-<style type="text/css">
+<style>
 
 body{
 	background:url(images/loginbg.png)
 }
-#middle{
-	margin-top:100px
-}
+
 #head {
 	height: 50px;
 	padding-top: 25px;
@@ -24,6 +22,12 @@ body{
 
 #sky {
  	background: url(images/sky.png) repeat;
+ 	width: 100%;
+	heigth: 462px;
+	z-index: -20;
+	height: 462px;
+	position: absolute;
+	top: 0px;background: url(images/sky.png) repeat;
  	width: 100%;
 	height: 462px;
 	position: absolute;
@@ -43,11 +47,32 @@ body{
 	font-size:17px;
 }
 
+* {
+	font-family: "微软雅黑";
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 14px;
+	color: white;
+}
+
 #footer {
 	text-align: center;
 	bottom: 15px;
 	position: absolute;
 	width: 100%;
+}
+
+.name,.pwd,.role {
+	width: 310px;
+	height: 44px;
+	line-height: 44px;
+	padding-left: 15px;
+	outline: none;
+	border-radius: 20px;
+	background-color: #0A3C78;
+	border: 1px solid #329BE0;
+	margin-top:18px;
 }
 
 </style>
@@ -58,7 +83,7 @@ body{
 
 	<div id = "sky"></div>
 	<div id="head"></div>
-	<div id = middle>
+	<div id = "middle">
 		<form action="admin/login" method="post">
 			<ul style="text-align: center" class="ul";>
 				<li style="font-size: 48px"> 
@@ -79,18 +104,14 @@ body{
 					</li>
 				
 					<li>
-						  <input type="submit" value="提交">
+						  <button id="login">
+							立即登录
+						</button>
 					</li>
 			</ul>
 		</form>
 		
 		
-		
-<form action="demo_form.php" method="get">
-  First name: <input type="text" name="fname"><br>
-  Last name: <input type="text" name="lname"><br>
-  <input type="submit" value="提交">
-</form>
 		
 		
 	</div>
